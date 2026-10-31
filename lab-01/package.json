@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-express-server",
+  "version": "1.0.0",
+  "description": "Lab 1: Node.js and Express Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "basic": "node basic-server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "http",
+    "server"
+  ],
+  "author": "POTRU. SRI RAMCHARAN",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
