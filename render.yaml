@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bdf-lab-1-potru-sriramcharan
+    runtime: node
+    rootDir: lab-01
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: STUDENT_NAME
+        value: "POTRU. SRI RAMCHARAN"
+      - key: STUDENT_REG_NO
+        value: "252U1R1199"
+      - key: STUDENT_SECTION
+        value: "CSE-2D"

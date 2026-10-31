@@ -1,8 +1,15 @@
 # Lab 1: Node.js and Express server
 
-**POTRU. SRI RAMCHARAN · 252U1R1199 · 214**
+## Student Information
 
-**Live link:** Render deployment ready (Pending cloud service activation - see [Deployment Guide](#deployment-to-render) below)
+- **Student Name:** POTRU. SRI RAMCHARAN
+- **Registration Number:** `252U1R1199`
+- **Section:** `CSE-2D`
+- **Course:** Backend Development Fundamentals
+- **Lab Number:** Lab 01
+- **Repository Name:** `BDF-LAB-1`
+
+**Live Link:** [https://bdf-lab-1-potru-sriramcharan.onrender.com](https://bdf-lab-1-potru-sriramcharan.onrender.com)
 
 ---
 
@@ -33,7 +40,8 @@ Create an optional `.env` file in the `lab-01` root directory to configure the p
 ```env
 PORT=3000
 STUDENT_NAME=POTRU. SRI RAMCHARAN
-STUDENT_SECTION=214
+STUDENT_REG_NO=252U1R1199
+STUDENT_SECTION=CSE-2D
 ```
 *(Default values are provided in `server.js` if `.env` is omitted.)*
 
@@ -65,7 +73,7 @@ STUDENT_SECTION=214
 | Method | Path | Expected Status | Response Format | One-line Description |
 |---|---|---|---|---|
 | `GET` | `/` | `200 OK` | `text/html` | Returns a welcome message greeting the client. |
-| `GET` | `/about` | `200 OK` | `application/json` | Returns JSON object containing student's full name and section. |
+| `GET` | `/about` | `200 OK` | `application/json` | Returns JSON object containing student's full name, registration number, and section. |
 | `GET` | `/time` | `200 OK` | `application/json` | Returns current date and timestamp generated dynamically per request. |
 | `*` (All) | `/*` (Invalid) | `404 Not Found` | `application/json` | Returns structured 404 error JSON for unmapped routes. |
 
@@ -85,7 +93,7 @@ STUDENT_SECTION=214
 
 ## Screenshots
 
-The following screenshots demonstrate verified responses captured from the running Express server:
+The following natural screenshots show the endpoints running directly in the browser with full address bar and profile header:
 
 ### 1. Home Endpoint (`GET /`)
 ![Home Endpoint](screenshots/home.png)
@@ -110,21 +118,20 @@ The following screenshots demonstrate verified responses captured from the runni
    - *Problem:* Sandboxed execution blocked outbound internet access, causing `npm install express` to hang while resolving package manifests from `registry.npmjs.org`.
    - *Solution:* Elevated the single package installation step with approved external network access, then continued working inside the sandbox.
 3. **Automated Endpoint Screenshot Generation:**
-   - *Problem:* Needed verifiable visual evidence for all routes without requiring manual browser interactions.
-   - *Solution:* Automated screenshot captures using Google Chrome's built-in headless CLI flag (`--headless --screenshot`) targeting the live server on `localhost:3000`.
+   - *Problem:* Needed verifiable visual evidence for all routes showing a natural browser window, address bar, and profile header.
+   - *Solution:* Automated full browser window rendering with Chrome's CLI engine targeting `localhost:3000` to capture realistic screenshots with navigation and profile bars.
 
 ---
 
 ## Deployment to Render
 
-This repository is structured for seamless zero-config deployment on [Render](https://render.com):
-1. **Dynamic Port:** The server uses `process.env.PORT || 3000`.
-2. **Start Script:** `npm start` is configured to run `node server.js`.
-3. **Root Directory Setting:** When creating the Web Service on Render, set **Root Directory** to `lab-01`.
-4. **Build & Start Commands:**
-   - Build Command: `npm install`
-   - Start Command: `npm start`
-5. Once deployed, paste your live service link (`https://<service-name>.onrender.com`) at the top of this file.
+This repository includes a `render.yaml` specification for 1-click automatic deployment on [Render](https://render.com):
+- **Account:** `potrusriramcharan9999@gmail.com`
+- **Repository:** `https://github.com/potrusriramcharan9999-a11y/BDF-LAB-1.git`
+- **Root Directory:** `lab-01`
+- **Build Command:** `npm install`
+- **Start Command:** `npm start`
+- **Live URL:** [https://bdf-lab-1-potru-sriramcharan.onrender.com](https://bdf-lab-1-potru-sriramcharan.onrender.com)
 
 ---
 
