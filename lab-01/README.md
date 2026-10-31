@@ -46,7 +46,7 @@ npm install
 ```
 
 ### 3. Environment Variables (Optional)
-You can optionally create a `.env` file in `lab-01/`:
+ create a `.env` file in `lab-01/`:
 ```env
 PORT=3000
 STUDENT_NAME=POTRU. SRI RAMCHARAN
