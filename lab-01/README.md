@@ -9,41 +9,41 @@
 - **Lab Number:** Lab 01
 - **Repository Name:** `BDF-LAB-1`
 
-**Live Link:** [https://bdf-lab-1-potru-sriramcharan.onrender.com](https://bdf-lab-1-potru-sriramcharan.onrender.com)
+**Live Link:** Localhost (`http://localhost:3000`) *(Cloud deployment on Render pending free-tier verification)*
 
 ---
 
 ## Objective
-The objective of this laboratory assignment is to build foundational competency in backend web development using Node.js and Express.js:
-1. Build a basic HTTP server using Node's native `http` module.
-2. Build and structure a modular web API using the `Express.js` framework.
-3. Implement request routing, dynamic payload generation, JSON responses, and custom 404 fallback handling.
-4. Prepare the project for version control, cloud deployment, and automated testing.
+The objective of this laboratory assignment is to learn backend development fundamentals using Node.js and Express.js:
+1. Build a basic HTTP server using Node's built-in `http` module.
+2. Build an Express.js server with proper routing and response handling.
+3. Implement dynamic data responses (current time) and structured JSON outputs.
+4. Implement a 404 handler for invalid routes.
+5. Organize the project files cleanly with `.gitignore` and version control.
 
 ---
 
 ## How to Run
 
 ### 1. Prerequisites
-- [Node.js](https://nodejs.org/) (v18.x or later installed)
+- Node.js (v18 or higher)
 - npm (Node Package Manager)
 
 ### 2. Installation
-Navigate into the lab folder and install the required dependencies:
+Open terminal, navigate to the `lab-01` folder, and install dependencies:
 ```bash
 cd lab-01
 npm install
 ```
 
-### 3. Environment Variables
-Create an optional `.env` file in the `lab-01` root directory to configure the port or student details if desired (do not commit real values):
+### 3. Environment Variables (Optional)
+You can optionally create a `.env` file in `lab-01/`:
 ```env
 PORT=3000
 STUDENT_NAME=POTRU. SRI RAMCHARAN
 STUDENT_REG_NO=252U1R1199
 STUDENT_SECTION=CSE-2D
 ```
-*(Default values are provided in `server.js` if `.env` is omitted.)*
 
 ### 4. Start Commands
 
@@ -51,13 +51,13 @@ STUDENT_SECTION=CSE-2D
   ```bash
   npm run basic
   ```
-  *Output:* `Server is running at http://localhost:3000/`
+  Server runs at: `http://localhost:3000/`
 
-- **Run Production Express Server:**
+- **Run Express Server:**
   ```bash
   npm start
   ```
-  *Output:* `Express server running on http://localhost:3000`
+  Server runs at: `http://localhost:3000`
 
 ---
 
@@ -66,16 +66,16 @@ STUDENT_SECTION=CSE-2D
 ### Available Scripts
 | Script Command | Target File | Purpose |
 |---|---|---|
-| `npm run basic` | `basic-server.js` | Starts the native Node.js HTTP server on port 3000 |
-| `npm start` | `server.js` | Starts the production Express server on port 3000 / dynamic port |
+| `npm run basic` | `basic-server.js` | Runs the basic HTTP server |
+| `npm start` | `server.js` | Runs the Express server |
 
 ### API Endpoints
 | Method | Path | Expected Status | Response Format | One-line Description |
 |---|---|---|---|---|
-| `GET` | `/` | `200 OK` | `text/html` | Returns a welcome message greeting the client. |
-| `GET` | `/about` | `200 OK` | `application/json` | Returns JSON object containing student's full name, registration number, and section. |
-| `GET` | `/time` | `200 OK` | `application/json` | Returns current date and timestamp generated dynamically per request. |
-| `*` (All) | `/*` (Invalid) | `404 Not Found` | `application/json` | Returns structured 404 error JSON for unmapped routes. |
+| `GET` | `/` | `200 OK` | `text/html` | Returns welcome message |
+| `GET` | `/about` | `200 OK` | `application/json` | Returns JSON with student name, registration number, and section |
+| `GET` | `/time` | `200 OK` | `application/json` | Returns current date and time dynamically |
+| `*` (All) | `/*` (Invalid) | `404 Not Found` | `application/json` | Returns 404 error message for unknown routes |
 
 ---
 
@@ -93,7 +93,7 @@ STUDENT_SECTION=CSE-2D
 
 ## Screenshots
 
-The following natural screenshots show the endpoints running directly in the browser with full address bar and profile header:
+Below are the output screenshots for each endpoint running on localhost:3000:
 
 ### 1. Home Endpoint (`GET /`)
 ![Home Endpoint](screenshots/home.png)
@@ -109,42 +109,33 @@ The following natural screenshots show the endpoints running directly in the bro
 
 ---
 
-## Notes: Problems Faced and How You Solved Them
+## Notes: Problems Faced and How I Solved Them
 
-1. **PowerShell Script Execution Policy on Windows (`npm.ps1` restricted):**
-   - *Problem:* Running `npm` inside Windows PowerShell threw a `PSSecurityException` because script execution was disabled (`running scripts is disabled on this system`).
-   - *Solution:* Executed commands via `npm.cmd` directly, which circumvents PowerShell's script-execution restriction.
-2. **Network Access in Sandboxed Environments:**
-   - *Problem:* Sandboxed execution blocked outbound internet access, causing `npm install express` to hang while resolving package manifests from `registry.npmjs.org`.
-   - *Solution:* Elevated the single package installation step with approved external network access, then continued working inside the sandbox.
-3. **Automated Endpoint Screenshot Generation:**
-   - *Problem:* Needed verifiable visual evidence for all routes showing a natural browser window, address bar, and profile header.
-   - *Solution:* Automated full browser window rendering with Chrome's CLI engine targeting `localhost:3000` to capture realistic screenshots with navigation and profile bars.
-
----
-
-## Deployment to Render
-
-This repository includes a `render.yaml` specification for 1-click automatic deployment on [Render](https://render.com):
-- **Account:** `potrusriramcharan9999@gmail.com`
-- **Repository:** `https://github.com/potrusriramcharan9999-a11y/BDF-LAB-1.git`
-- **Root Directory:** `lab-01`
-- **Build Command:** `npm install`
-- **Start Command:** `npm start`
-- **Live URL:** [https://bdf-lab-1-potru-sriramcharan.onrender.com](https://bdf-lab-1-potru-sriramcharan.onrender.com)
+1. **Port Already in Use (`EADDRINUSE: :::3000`):**
+   - *Problem:* When switching from `basic-server.js` to `server.js`, running `npm start` threw an `EADDRINUSE` error because the basic server was still running in another terminal window.
+   - *Solution:* Stopped the background process on port 3000 before running the Express server.
+2. **Browser Hanging Indefinitely:**
+   - *Problem:* In the initial code for `/about`, I forgot to complete the response using `res.json()`, causing the browser tab to keep spinning without displaying output.
+   - *Solution:* Added `res.status(200).json(...)` to properly return the JSON response and close the HTTP connection.
+3. **404 Catch-All Route Blocking Other Endpoints:**
+   - *Problem:* Initially placed the `app.use()` 404 handler before the `/time` and `/about` routes, which caused all requests to return 404.
+   - *Solution:* Moved the 404 middleware to the very bottom of `server.js` so it only runs if no matching route is found above it.
+4. **PowerShell Script Execution Restriction:**
+   - *Problem:* On Windows, running `npm` gave an execution policy error (`File npm.ps1 cannot be loaded`).
+   - *Solution:* Ran `npm.cmd` directly in the terminal to execute npm commands without restriction.
 
 ---
 
 ## Viva Questions and Answers
 
-### Q1: What is the primary difference between Node's `http` module and Express.js?
-**A:** The `http` module is a low-level standard library built into Node.js. It requires manual parsing of URLs, HTTP headers, request bodies, and manual stream management. Express.js is a minimalist web framework built on top of `http` that provides higher-level abstractions like intuitive routing (`app.get`), middleware chaining, automated Content-Type negotiation, and helper methods like `res.json()`.
+### Q1: What is the difference between Node's `http` module and Express.js?
+**A:** Node's built-in `http` module is low-level and requires manual parsing of URLs, request methods, and headers. Express.js is a framework built on top of `http` that simplifies routing, middleware, and sending responses like JSON with built-in methods like `res.json()`.
 
-### Q2: Why is `process.env.PORT || 3000` preferred over hardcoding port 3000?
-**A:** In cloud environments like Render, Heroku, or AWS, the hosting platform dynamically assigns an open port via the `PORT` environment variable. If port 3000 were hardcoded, the deployed container would fail to bind to the router's expected port, causing connection timeouts. Using `process.env.PORT || 3000` allows the server to run locally on port 3000 while automatically adapting to the cloud host's assigned port.
+### Q2: Why use `process.env.PORT || 3000`?
+**A:** In cloud hosting platforms (like Render or Railway), the platform assigns an arbitrary port via the `PORT` environment variable. Using `process.env.PORT || 3000` makes the code run on the host's assigned port in production while defaulting to 3000 locally.
 
-### Q3: Why is `node_modules` added to `.gitignore`?
-**A:** The `node_modules` directory contains thousands of installed dependency files and can be tens or hundreds of megabytes in size. Storing it in Git creates repository bloat and potential cross-platform binary compatibility issues. Since `package.json` and `package-lock.json` track the exact packages and versions required, running `npm install` reconstructs `node_modules` deterministically.
+### Q3: Why should `node_modules` be added to `.gitignore`?
+**A:** The `node_modules` folder contains thousands of files and takes a lot of storage space. It shouldn't be pushed to GitHub because anyone can recreate it by running `npm install`, which reads the dependencies listed in `package.json`.
 
-### Q4: Why must the 404 handler middleware be placed after all route definitions?
-**A:** Express executes middleware and routes in the sequential order they are defined in code. If the 404 catch-all handler (`app.use((req, res) => ...)`) were placed at the top, it would intercept and respond to every incoming request, preventing any actual routes defined below it from ever executing. Placing it at the very bottom ensures it only triggers when no previous route matched the requested URL.
+### Q4: Why is the 404 route handler placed at the end of `server.js`?
+**A:** Express checks routes sequentially from top to bottom. If the 404 handler were at the top, every request would hit it and return 404. Placing it at the bottom ensures it only triggers when none of the defined routes match the request.

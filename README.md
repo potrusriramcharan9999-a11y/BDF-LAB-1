@@ -8,7 +8,7 @@
 - **Course:** Backend Development Fundamentals
 - **Repository Name:** `BDF-LAB-1`
 
-**Deployment (Render):** [https://bdf-lab-1-potru-sriramcharan.onrender.com](https://bdf-lab-1-potru-sriramcharan.onrender.com)
+**Status:** Running locally on `http://localhost:3000` · Lab 01 Completed
 
 ---
 
