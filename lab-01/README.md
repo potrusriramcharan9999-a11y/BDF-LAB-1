@@ -135,16 +135,14 @@ Below are the output screenshots for each endpoint running on localhost:3000:
 
 ---
 
-## Viva Questions and Answers
+## Conclusion
 
-### Q1: What is the difference between Node's `http` module and Express.js?
-**A:** Node's built-in `http` module is low-level and requires manual parsing of URLs, request methods, and headers. Express.js is a framework built on top of `http` that simplifies routing, middleware, and sending responses like JSON with built-in methods like `res.json()`.
+In this laboratory assignment, I successfully learned and implemented the fundamentals of Node.js and Express.js. I initialized a Node.js project using `npm init -y`, explored the fields of `package.json`, and installed Express using `npm install express`.
 
-### Q2: Why use `process.env.PORT || 3000`?
-**A:** In cloud hosting platforms (like Render or Railway), the platform assigns an arbitrary port via the `PORT` environment variable. Using `process.env.PORT || 3000` makes the code run on the host's assigned port in production while defaulting to 3000 locally.
+I developed a basic HTTP server using Node.js's built-in `http.createServer()` method, which responds with "Hello" on port 3000. I then implemented an Express server using `const app = express()` and `app.listen()`.
 
-### Q3: Why should `node_modules` be added to `.gitignore`?
-**A:** The `node_modules` folder contains thousands of files and takes a lot of storage space. It shouldn't be pushed to GitHub because anyone can recreate it by running `npm install`, which reads the dependencies listed in `package.json`.
+I created three GET endpoints: `/` to display a welcome message, `/about` to return student information in JSON format, and `/time` to display the current date and time dynamically using `new Date()`. I also implemented a 404 error handler to manage requests to undefined routes.
 
-### Q4: Why is the 404 route handler placed at the end of `server.js`?
-**A:** Express checks routes sequentially from top to bottom. If the 404 handler were at the top, every request would hit it and return 404. Placing it at the bottom ensures it only triggers when none of the defined routes match the request.
+Finally, I documented the project in README.md, captured screenshots of the endpoint responses, organized the source code using GitHub, and prepared the application for cloud deployment using Render.
+
+Through this experiment, I gained practical knowledge of HTTP servers, Express routing, request and response handling, HTTP status codes, project dependency management, and backend application deployment.
