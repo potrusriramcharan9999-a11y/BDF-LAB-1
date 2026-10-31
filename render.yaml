@@ -12,3 +12,4 @@ services:
         value: "252U1R1199"
       - key: STUDENT_SECTION
         value: "CSE-2D"
+
