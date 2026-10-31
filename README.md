@@ -8,7 +8,16 @@
 - **Course:** Backend Development Fundamentals
 - **Repository Name:** `BDF-LAB-1`
 
-**Status:** Running locally on `http://localhost:3000` · Lab 01 Completed
+---
+
+## Live Deployments (Render)
+
+### Lab 1: Node.js & Express Server
+
+- **Base URL (Home):** https://potru-sriramcharan.onrender.com/
+- **About Route:** https://potru-sriramcharan.onrender.com/about
+- **Current Date & Time:** https://potru-sriramcharan.onrender.com/time
+- **404 Error Found:** https://potru-sriramcharan.onrender.com/unknown
 
 ---
 

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: bdf-lab-1-potru-sriramcharan
+    name: potru-sriramcharan
     runtime: node
     rootDir: lab-01
     buildCommand: npm install
@@ -12,4 +12,3 @@ services:
         value: "252U1R1199"
       - key: STUDENT_SECTION
         value: "CSE-2D"
-

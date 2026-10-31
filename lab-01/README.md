@@ -9,7 +9,16 @@
 - **Lab Number:** Lab 01
 - **Repository Name:** `BDF-LAB-1`
 
-**Live Link:** Localhost (`http://localhost:3000`) *(Cloud deployment on Render pending free-tier verification)*
+---
+
+## Live Deployments (Render)
+
+### Lab 1: Node.js & Express Server
+
+- **Base URL (Home):** https://potru-sriramcharan.onrender.com/
+- **About Route:** https://potru-sriramcharan.onrender.com/about
+- **Current Date & Time:** https://potru-sriramcharan.onrender.com/time
+- **404 Error Found:** https://potru-sriramcharan.onrender.com/unknown
 
 ---
 
