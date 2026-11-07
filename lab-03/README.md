@@ -19,9 +19,26 @@
 - **Get All Books:** [https://potru-sriramcharan-lab3.onrender.com/books](https://potru-sriramcharan-lab3.onrender.com/books)
 - **Search (Java):** [https://potru-sriramcharan-lab3.onrender.com/books?search_q=Java](https://potru-sriramcharan-lab3.onrender.com/books?search_q=Java)
 - **Sorting (Price ASC):** [https://potru-sriramcharan-lab3.onrender.com/books?order_by=price&order=ASC](https://potru-sriramcharan-lab3.onrender.com/books?order_by=price&order=ASC)
-- **Pagination (Limit=3, Offset=2):** [https://potru-sriramcharan-lab3.onrender.com/books?limit=3&offset=2](https://potru-sriramcharan-lab3.onrender.com/books?limit=3&offset=2)
-- **Price Range Filter (300 to 500):** [https://potru-sriramcharan-lab3.onrender.com/books?min_price=300&max_price=500](https://potru-sriramcharan-lab3.onrender.com/books?min_price=300&max_price=500)
+- **Pagination (Limit=5, Offset=0):** [https://potru-sriramcharan-lab3.onrender.com/books?limit=5&offset=0](https://potru-sriramcharan-lab3.onrender.com/books?limit=5&offset=0)
+- **Price Range Filter (100 to 500):** [https://potru-sriramcharan-lab3.onrender.com/books?min_price=100&max_price=500](https://potru-sriramcharan-lab3.onrender.com/books?min_price=100&max_price=500)
 - **Single Book (ID 1):** [https://potru-sriramcharan-lab3.onrender.com/books/1](https://potru-sriramcharan-lab3.onrender.com/books/1)
+
+#### Public Deployment Verification Table (Tested Live on Render)
+| Endpoint Tested | HTTP Method | Expected Status | Actual Status | Live Verification Result |
+|---|---|---|---|---|
+| `/` (Welcome & Metadata) | `GET` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books` (All Books) | `GET` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books/1` (Book by ID) | `GET` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books?search_q=java` | `GET` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books?order_by=price&order=ASC` | `GET` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books?limit=5&offset=0` | `GET` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books?min_price=100&max_price=500` | `GET` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books` (Create Book) | `POST` | `201 Created` | `201 Created` | **VERIFIED LIVE** |
+| `/books/:id` (Update Book) | `PUT` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books/:id` (Delete Book) | `DELETE` | `200 OK` | `200 OK` | **VERIFIED LIVE** |
+| `/books` (Missing Title) | `POST` | `400 Bad Request` | `400 Bad Request` | **VERIFIED LIVE** |
+| `/books/99999` (Nonexistent ID) | `GET` | `404 Not Found` | `404 Not Found` | **VERIFIED LIVE** |
+| `/books?order_by=invalid` | `GET` | `400 Bad Request` | `400 Bad Request` | **VERIFIED LIVE** |
 
 ---
 
@@ -485,3 +502,4 @@ Below are the verified output screenshots for each required operation:
 
 ## Conclusion
 Lab 3 successfully demonstrates a full-featured, secure, and robust RESTful API built with Node.js, Express, and SQLite. The application strictly validates all input parameters, prevents SQL injection through complete query parameterization, handles errors gracefully without leaking internal system traces, includes an automated 21-test Postman collection, and is architected for cloud deployment with persistent storage.
+
