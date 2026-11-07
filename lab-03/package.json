@@ -1,0 +1,23 @@
+{
+  "name": "lab-03",
+  "version": "1.0.0",
+  "description": "Lab 3: REST API, Query Parameters, Validation and Debugging",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sqlite",
+    "rest-api",
+    "validation",
+    "debugging"
+  ],
+  "author": "POTRU. SRI RAMCHARAN",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}
