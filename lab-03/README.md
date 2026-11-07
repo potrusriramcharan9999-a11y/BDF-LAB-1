@@ -418,37 +418,22 @@ if (!allowedColumns.includes(order_by.toLowerCase())) {
 
 ## Output Screenshots
 
-Below are the verified output screenshots for each required operation:
+Below are the output screenshots captured directly from the live Render deployment (`https://potru-sriramcharan-lab3.onrender.com`):
 
-### 1. GET All Books (`GET /books`)
-![GET All Books](screenshots/get-all-books.png)
+### 1. Root / Home Endpoint (`GET /`)
+![Root Endpoint](screenshots/1-home-endpoint.png)
 
-### 2. Search Results (`GET /books?search_q=Java`)
-![Search Results](screenshots/search-results.png)
+### 2. GET All Books (`GET /books`)
+![GET All Books](screenshots/2-get-all-books.png)
 
-### 3. Sorting Results (`GET /books?order_by=price&order=ASC`)
-![Sorting Results](screenshots/sorting-results.png)
+### 3. Search Results (`GET /books?search_q=Java`)
+![Search Results](screenshots/3-search-results.png)
 
-### 4. Pagination (`GET /books?limit=3&offset=2`)
-![Pagination](screenshots/pagination.png)
+### 4. Sorting Results (`GET /books?order_by=price&order=ASC`)
+![Sorting Results](screenshots/4-sorting-results.png)
 
-### 5. Price Filtering (`GET /books?min_price=300&max_price=500`)
-![Price Filtering](screenshots/price-filtering.png)
-
-### 6. Successful POST (`POST /books`)
-![Successful POST](screenshots/successful-post.png)
-
-### 7. Successful PUT (`PUT /books/:id`)
-![Successful PUT](screenshots/successful-put.png)
-
-### 8. Successful DELETE (`DELETE /books/:id`)
-![Successful DELETE](screenshots/successful-delete.png)
-
-### 9. Validation Error 400 (`POST /books` with missing title)
-![Validation Error 400](screenshots/validation-error-400.png)
-
-### 10. Resource Not Found 404 (`GET /books/99999`)
-![Resource Not Found 404](screenshots/not-found-404.png)
+### 5. Pagination & Filtering Results (`GET /books?limit=3&offset=3`)
+![Pagination Results](screenshots/5-pagination-results.png)
 
 ---
 
