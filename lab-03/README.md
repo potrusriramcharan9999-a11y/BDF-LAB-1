@@ -432,8 +432,14 @@ Below are the output screenshots captured directly from the live Render deployme
 ### 4. Sorting Results (`GET /books?order_by=price&order=ASC`)
 ![Sorting Results](screenshots/4-sorting-results.png)
 
-### 5. Pagination & Filtering Results (`GET /books?limit=3&offset=3`)
+### 5. Pagination Results (`GET /books?limit=3&offset=3`)
 ![Pagination Results](screenshots/5-pagination-results.png)
+
+### 6. Price Filtering Results (`GET /books?min_price=350&max_price=500`)
+![Price Filtering Results](screenshots/6-price-filtering-results.png)
+
+### 7. Single Book by ID (`GET /books/1`)
+![Get Book by ID](screenshots/7-get-book-by-id.png)
 
 ---
 
