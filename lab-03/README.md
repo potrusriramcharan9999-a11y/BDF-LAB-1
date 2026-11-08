@@ -441,7 +441,7 @@ Below are the output screenshots captured directly from the live Render deployme
 
 ### Postman Test Suite Execution Screenshots
 
-Below are genuine Postman test execution screenshots run directly against the live Render API (`https://potru-sriramcharan-lab3.onrender.com`):
+Below are  Postman test execution screenshots run directly against the live Render API (`https://potru-sriramcharan-lab3.onrender.com`):
 
 #### Postman 1. GET All Books (`GET /books` - 200 OK, 2/2 Tests Passed)
 ![Postman GET All Books](screenshots/postman-1-get-all-books.png)
@@ -507,34 +507,7 @@ Below are genuine Postman test execution screenshots run directly against the li
 
 ---
 
-## Viva Questions and Answers
 
-### Q1: What makes an API "RESTful"?
-**A:** A REST (Representational State Transfer) API is an architectural style that uses stateless communication, standardized resource-oriented URLs (e.g. `/books`), and native HTTP verbs (`GET` for reading, `POST` for creating, `PUT` for updating, `DELETE` for removing) with standard HTTP status codes (`200`, `201`, `400`, `404`, `500`).
-
-### Q2: What is SQL Injection, and how do parameterized queries prevent it?
-**A:** SQL injection occurs when untrusted user input is directly concatenated into a SQL statement, allowing attackers to manipulate query logic or execute unauthorized SQL commands. Parameterized queries send the SQL command structure and user data separately. The database engine treats the parameters strictly as literal values, never interpreting them as executable SQL code.
-
-### Q3: Why is SQLite called an "embedded" database?
-**A:** Unlike client-server databases like PostgreSQL or MySQL that run as separate background daemon services listening on network ports, SQLite is an embedded database engine compiled directly into the application process. It reads and writes data directly to a single disk file (`books.db`) with zero network overhead.
-
-### Q4: How do you implement persistent storage on Render for SQLite?
-**A:** On Render, containers are ephemeral and reset during deploys. To persist SQLite data across builds and restarts:
-1. Attach a **Persistent Disk** to the Render Web Service (e.g. mount path `/var/data`).
-2. Set the environment variable `DB_DIR=/var/data` in the Render dashboard.
-3. The application will initialize SQLite inside `/var/data/books.db`, which persists indefinitely on the attached disk volume.
-
-### Q5: What is the difference between `PUT` and `PATCH` in REST APIs?
-**A:** `PUT` replaces the entire resource with the payload sent in the request body (all required fields must be provided). `PATCH` performs a partial update, modifying only the specific fields included in the request body while leaving other fields unchanged.
-
-### Q6: Why should `order_by` never be concatenated into SQL queries?
-**A:** SQL query placeholders (`?`) can only parameterize data values, not database identifiers like column names or table names. If a client sends `order_by=price; DROP TABLE books;--`, string concatenation would execute the injection. We prevent this by checking the input against a strict allowlist (`['id', 'title', 'author', 'price']`).
-
-### Q7: Why do we use `limit` and `offset` for pagination?
-**A:** `LIMIT` defines the maximum number of records to return in a single page, while `OFFSET` specifies how many records to skip from the beginning. This allows clients to fetch large datasets in manageable chunks, reducing network bandwidth and database memory consumption.
-
-### Q8: What is the difference between HTTP 400 and HTTP 404?
-**A:** `400 Bad Request` indicates that the client sent malformed syntax, invalid parameters, or failed validation. `404 Not Found` indicates that the server recognized the request syntax, but the specific requested resource or endpoint path does not exist.
 
 ---
 
