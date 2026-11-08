@@ -477,6 +477,21 @@ Below are genuine Postman test execution screenshots run directly against the li
 #### Postman 10. POST create book (`POST /books` - 201 Created, 1/1 Test Passed)
 ![Postman Create Book](screenshots/postman-10-post-create-book.png)
 
+#### Postman 11. PUT update book (`PUT /books/1` - 200 OK, 1/1 Test Passed)
+![Postman Update Book](screenshots/postman-11-put-update-book.png)
+
+#### Postman 12. DELETE book (`DELETE /books/2` - 200 OK, 1/1 Test Passed)
+![Postman Delete Book](screenshots/postman-12-delete-book.png)
+
+#### Postman 13. Validation Error: Missing Title (`POST /books` - 400 Bad Request, 1/1 Test Passed)
+![Postman 400 Missing Title](screenshots/postman-13-validation-error-missing-title.png)
+
+#### Postman 15. Validation Error: Non-numeric Price (`POST /books` - 400 Bad Request, 1/1 Test Passed)
+![Postman 400 Non-numeric Price](screenshots/postman-15-validation-error-non-numeric-price.png)
+
+#### Postman 16. Error 404: Nonexistent Book ID (`GET /books/99999` - 404 Not Found, 1/1 Test Passed)
+![Postman 404 Nonexistent Book](screenshots/postman-16-error-404-nonexistent-book.png)
+
 ---
 
 ## Notes: Problems Faced and How I Solved Them
