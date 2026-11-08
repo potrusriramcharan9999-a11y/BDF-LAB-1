@@ -462,6 +462,21 @@ Below are genuine Postman test execution screenshots run directly against the li
 #### Postman 5. Sort DESC (`GET /books?order_by=price&order=DESC` - 200 OK, 2/2 Tests Passed)
 ![Postman Sort DESC](screenshots/postman-5-sort-desc.png)
 
+#### Postman 6. Pagination using limit and offset (`GET /books?limit=3&offset=2` - 200 OK, 2/2 Tests Passed)
+![Postman Pagination](screenshots/postman-6-pagination.png)
+
+#### Postman 7. Minimum price filtering (`GET /books?min_price=450` - 200 OK, 2/2 Tests Passed)
+![Postman Min Price](screenshots/postman-7-min-price.png)
+
+#### Postman 8. Maximum price filtering (`GET /books?max_price=350` - 200 OK, 2/2 Tests Passed)
+![Postman Max Price](screenshots/postman-8-max-price.png)
+
+#### Postman 9. Combined price-range filtering (`GET /books?min_price=300&max_price=500` - 200 OK, 2/2 Tests Passed)
+![Postman Combined Price](screenshots/postman-9-combined-price.png)
+
+#### Postman 10. POST create book (`POST /books` - 201 Created, 1/1 Test Passed)
+![Postman Create Book](screenshots/postman-10-post-create-book.png)
+
 ---
 
 ## Notes: Problems Faced and How I Solved Them
