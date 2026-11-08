@@ -380,14 +380,10 @@ if (!allowedColumns.includes(order_by.toLowerCase())) {
 
 ## Postman Testing Instructions
 
-1. Locate the collection file at:
-   [`lab-03/postman/Lab3-REST-API-Testing.json`](./postman/Lab3-REST-API-Testing.json)
-2. Open **Postman** and click **Import**.
-3. Drag and drop `Lab3-REST-API-Testing.json` into Postman.
-4. Set the `base_url` variable to:
+1. Set the `base_url` variable to:
    - For local testing: `http://localhost:3000`
    - For live Render testing: `https://potru-sriramcharan-lab3.onrender.com`
-5. Click **Run Collection** to automatically execute all 21 test assertions.
+2. Click **Run Collection** to automatically execute all 21 test assertions.
 
 ### 21 Test Cases Results Summary:
 | # | Test Name | Method | Path / Query | Expected Status | Actual Status | Result |
