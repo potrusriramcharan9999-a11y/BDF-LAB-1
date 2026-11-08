@@ -443,6 +443,27 @@ Below are the output screenshots captured directly from the live Render deployme
 
 ---
 
+### Postman Test Suite Execution Screenshots
+
+Below are genuine Postman test execution screenshots run directly against the live Render API (`https://potru-sriramcharan-lab3.onrender.com`):
+
+#### Postman 1. GET All Books (`GET /books` - 200 OK, 2/2 Tests Passed)
+![Postman GET All Books](screenshots/postman-1-get-all-books.png)
+
+#### Postman 2. GET Book by ID (`GET /books/1` - 200 OK, 2/2 Tests Passed)
+![Postman GET Book by ID](screenshots/postman-2-get-book-by-id.png)
+
+#### Postman 3. Search using search_q (`GET /books?search_q=Java` - 200 OK, 2/2 Tests Passed)
+![Postman Search](screenshots/postman-3-search-results.png)
+
+#### Postman 4. Sort ASC (`GET /books?order_by=price&order=ASC` - 200 OK, 2/2 Tests Passed)
+![Postman Sort ASC](screenshots/postman-4-sort-asc.png)
+
+#### Postman 5. Sort DESC (`GET /books?order_by=price&order=DESC` - 200 OK, 2/2 Tests Passed)
+![Postman Sort DESC](screenshots/postman-5-sort-desc.png)
+
+---
+
 ## Notes: Problems Faced and How I Solved Them
 
 1. **Ensuring Dynamic SQLite Paths for Render Persistent Disks:**
